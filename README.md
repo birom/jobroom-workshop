@@ -180,6 +180,20 @@ ng g c home -d
 Create the toobar component
 ```bash
 ng g c home/toolbar
+ng g e home/toolbar
 ```
 
 
+Create the toobar-item and toolbar-title component
+```bash
+ng g c home/toolbar-item
+ng g c home/toolbar-title
+```
+
+Create the job-search-tool, candidate-search-tool, job-publication-tool component
+```bash
+ng g c home/job-search-tool
+ng g c home/candidate-search-tool
+ng g c home/job-publication-tool
+ng g e home/tab
+```

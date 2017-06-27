@@ -31,66 +31,26 @@
 
           <ul class="nav nav-tabs nav--job-room" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#candidate-search" role="tab" aria-expanded="false">Kandidaten
+              <a class="nav-link" [ngClass]="{'active': tab == Tab.CandidateSearch}"
+                 (click)="selectTab(Tab.CandidateSearch)" role="tab" aria-expanded="false">Kandidaten
                 finden</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#job-publication" role="tab" aria-expanded="true">Job
+              <a class="nav-link" [ngClass]="{'active': tab == Tab.JobPublication}" role="tab" aria-expanded="true"
+                 (click)="selectTab(Tab.JobPublication)">Job
                 publizieren</a>
             </li>
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content--job-room">
-            <div class="tab-content">
-              <div class="tab-pane active" id="candidate-search" role="tabpanel" aria-expanded="false">
-               <app-candidate-search-tool></app-candidate-search-tool>
-              </div>
-              <div class="tab-pane" id="job-publication" role="tabpanel" aria-expanded="true">
-                <fieldset class="candidate-search">
-                  <legend>Stellenbeschreibung</legend>
-
-                  <div class="form-group">
-                    <label for="basic-addon2">Stellenbezeichnung</label>
-                    <div class="form-group--icon">
-                      <input type="text" class="form-control" placeholder="z.B. Maurer" id="basic-addon2">
-
-                      <a href="#" class="fa-stack form-control--icon">
-                        <i class="fa fa-search fa-stack-1x"></i>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="cs-8" class="col-form-label">Abschluss</label>
-                    <div>
-                      <select class="form-control custom-select" id="cs-8">
-                        <option selected="">keine Auswahl</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <a class="btn btn-primary btn-lg" href="#">Job publizieren</a>
-                </fieldset>
-                <div class="candidate-search__radar">
-                  <!--
-                                    <button type="button" class="close" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    -->
-
-                  Diesem Job-Profil enstprechen bereits<br>
-                  <span class="badge badge-radar">1'644</span><br>
-                  Stellensuchenden
-                  <a href="#">Jetzt anzeigen!</a>
-                </div>
+            <div class="tab-content" [ngSwitch]="tab">
+              <div class="tab-pane active" role="tabpanel" aria-expanded="false">
+                <app-candidate-search-tool *ngSwitchCase="Tab.CandidateSearch"></app-candidate-search-tool>
+                <app-job-publication-tool *ngSwitchCase="Tab.JobPublication"></app-job-publication-tool>
               </div>
             </div>
           </div>
-
 
         </div>
       </div>
