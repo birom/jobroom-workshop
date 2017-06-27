@@ -2,43 +2,14 @@
      style="background-image: url('/styleguide/images/bg-jobroom.jpg');">
 
   <app-toolbar>
-    <li class="nav-title">
-      <h2 class="light">Job-Room bietet Leistungen für</h2>
-    </li>
-    <li class="nav-item show-jobs active">
-      <a href="#" class="nav-link">
-								<span class="nav-link__icon">
-									<span class="icon__stack">
-										<i class="fa fa-binoculars" aria-hidden="true"></i>
-									</span>
-								</span>
-        Stellensuchende
-      </a>
-    </li>
-    <li class="nav-item show-job-offers">
-      <a href="#" class="nav-link">
-								<span class="nav-link__icon">
-									<span class="icon__stack">
-										<i class="fa fa-building" aria-hidden="true"></i>
-									</span>
-								</span>
-        Unternehmen
-      </a>
-    </li>
-    <li class="nav-item show-candidates">
-      <a href="#" class="nav-link">
-								<span class="nav-link__icon">
-									<span class="icon__stack">
-										<i class="fa fa-eye" aria-hidden="true"></i>
-									</span>
-								</span>
-        Arbeitsvermittler
-      </a>
-    </li>
+   <app-toolbar-title>Job-Room bietet Leistungen für</app-toolbar-title>
+   <app-toolbar-item [icon]="'binoculars'" [active]="toolbar == Toolbar.Jobs" (select)="select(Toolbar.Jobs)">Stellensuchende</app-toolbar-item>
+   <app-toolbar-item [icon]="'building'" [active]="toolbar == Toolbar.JobOffers" (select)="select(Toolbar.JobOffers)">Unternehmen</app-toolbar-item>
+   <app-toolbar-item [icon]="'eye'" [active]="toolbar == Toolbar.Candidates" (select)="select(Toolbar.Candidates)">Arbeitsvermittler</app-toolbar-item>
   </app-toolbar>
 
-  <div class="container">
-    <div id="jobs" style="">
+  <div class="container" [ngSwitch]="toolbar">
+    <div id="jobs" *ngSwitchCase="Toolbar.Jobs">
       <h1 class="tool__heading">Finden Sie jetzt Ihren Traumjob!</h1>
 
       <div class="row">
@@ -98,7 +69,7 @@
       </div>
     </div>
 
-    <div id="candidates" style="display: none;">
+    <div id="candidates" *ngSwitchCase="Toolbar.Candidates">
       <div class="row">
         <div class="col-sm-8">
 

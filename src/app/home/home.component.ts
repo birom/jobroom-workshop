@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Toolbar} from './toolbar.enum';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  Toolbar: typeof Toolbar = Toolbar;
+  toolbar: Toolbar;
 
-  constructor() { }
+  constructor() {
+    this.toolbar = Toolbar.Jobs;
+  }
 
   ngOnInit() {
   }
 
+  select(toolbar: Toolbar): void {
+    this.toolbar = toolbar;
+  }
 }
