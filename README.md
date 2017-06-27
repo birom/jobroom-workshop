@@ -177,4 +177,9 @@ ng g m home #-d
 ng g c home -d
 ```
 
+Create the toobar component
+```bash
+ng g c home/toolbar
+```
+
 
