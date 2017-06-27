@@ -26,3 +26,41 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Workshop notes
+
+### Introduction to Angular
+
+### Typescript
+
+* It is a superset of javascript
+* Transpiled to javascript
+* Bring us ES2015 features (let, const, arrow functions, array methods, classes, modules)
+* Typescript features (static typing, interfaces, class properties, public/private access)
+
+Typescript example:
+
+```typescript
+interface ICat {
+  name:string
+  age?:number
+}
+
+export class Cat implements ICat{
+  private name:string
+  private speak() { 
+    console.log('My name is: ' + this.name) 
+  }
+}
+
+let fluffy = new Cat()
+console.log(fluffy.name)      //compile-time error
+fluffy.speak()                // compile-time error
+```
+
+### Angular conceptual overview
+
+![Component hierarchy](doc/component-tree.png)
+* Angular is a component based framework
+* NgModule is a container for components, directive, pipe and services (services are shared between modules)
