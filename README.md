@@ -162,3 +162,9 @@ Run protractor test:
 ng e2e
 ```
 
+### Let's create some components!
+ 
+```bash
+ng g c layout/footer --flat -d
+
+```
