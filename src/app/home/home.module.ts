@@ -5,11 +5,12 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarItemComponent } from './toolbar-item/toolbar-item.component';
 import { ToolbarTitleComponent } from './toolbar-title/toolbar-title.component';
 import { JobSearchToolComponent } from './job-search-tool/job-search-tool.component';
+import { CandidateSearchToolComponent } from './candidate-search-tool/candidate-search-tool.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [HomeComponent, ToolbarComponent, ToolbarItemComponent, ToolbarTitleComponent, JobSearchToolComponent]
+  declarations: [HomeComponent, ToolbarComponent, ToolbarItemComponent, ToolbarTitleComponent, JobSearchToolComponent, CandidateSearchToolComponent]
 })
 export class HomeModule { }
