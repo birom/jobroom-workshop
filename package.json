@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@alv-ch/alv-styleguide": "0.0.4",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",

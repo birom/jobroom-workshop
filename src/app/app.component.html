@@ -1,21 +1,405 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
+<div class="header sticky-top">
+  <!-- ALV-HEADER -->
+  <div class="alv-header alv-header--inverse bg-inverse">
+		<span class="alv-header__brand mb-0">
+			<img src="/styleguide/images/swiss.svg" width="20" height="20" class="d-inline-block" alt="Swiss Confederation">
+			Arbeitslosenversicherung ALV
+		</span>
+  </div>
+  <!-- navbar -->
+  <nav class="navbar navbar-alv navbar-toggleable-md navbar-light bg-faded">
+    <div class="container">
+      <!-- todo: CUSTOM TOGGLER -->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand logo logo--inverse" href="/index.html">
+        <strong class="logo__brand--job-room">Job-Room</strong>
+        <div class="logo__title-small">
+          <strong>alv</strong><span class="title__plus-ch">ch</span>
+        </div>
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <form class="form-inline">
+              <div class="collapse" id="searchForm">
+                <div class="form-group form-group--navbar">
+                  <label for="search" class="sr-only">Wie können wir helfen?</label>
+                  <div class="form-group--icon">
+                    <input type="text" class="form-control" placeholder="Wie können wir helfen?" id="search">
+
+                    <a data-toggle="collapse" href="#searchForm" aria-expanded="false" aria-controls="searchForm" class="fa-stack form-control--icon">
+                      <i class="fa fa-times fa-stack-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a class="nav-link nav-link--search-left" data-toggle="collapse" href="#searchForm" aria-expanded="false" aria-controls="searchForm"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </form>				</li>
+          <li class="nav-item megamenu dropdown dropdown--canvas">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i> Menü</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="left: -913px;">
+              <div class="megamenu-menu">
+                <div>
+                  <span class="dropdown-title">Stellensuchende</span>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                <div>
+                  <span class="dropdown-title">Unternehmen</span>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                <div>
+                  <span class="dropdown-title">Arbeitsvermittler</span>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                <div>
+                  <span class="dropdown-title">Institutionen/Medien</span>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                <div>
+                  <span class="dropdown-title">Aktuell</span>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+
+
+                  <span class="dropdown-title">Links</span>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/job-room.html">Job-Room</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Amstat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link--login" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <ul class="navbar-nav navbar--language-switcher" id="languageSwitcher">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">DE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">FR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">IT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">EN</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>	<!-- /navbar -->
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="jumbotron jumbotron-fluid jumbotron--has-toolbar jumbotron--job-room" style="background-image: url('/styleguide/images/bg-jobroom.jpg');">
+
+  <div class="toolbar">
+    <div class="container">
+      <div class="toolbar-collapse">
+        <ul class="toolbar-nav center toolbar-nav--has-icon">
+          <li class="nav-title">
+            <h2 class="light">Job-Room bietet Leistungen für</h2>
+          </li>
+          <li class="nav-item show-jobs active">
+            <a href="#" class="nav-link">
+								<span class="nav-link__icon">
+									<span class="icon__stack">
+										<i class="fa fa-binoculars" aria-hidden="true"></i>
+									</span>
+								</span>
+              Stellensuchende
+            </a>
+          </li>
+          <li class="nav-item show-job-offers">
+            <a href="#" class="nav-link">
+								<span class="nav-link__icon">
+									<span class="icon__stack">
+										<i class="fa fa-building" aria-hidden="true"></i>
+									</span>
+								</span>
+              Unternehmen
+            </a>
+          </li>
+          <li class="nav-item show-candidates">
+            <a href="#" class="nav-link">
+								<span class="nav-link__icon">
+									<span class="icon__stack">
+										<i class="fa fa-eye" aria-hidden="true"></i>
+									</span>
+								</span>
+              Arbeitsvermittler
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="jobs" style="">
+      <h1 class="tool__heading">Finden Sie jetzt Ihren Traumjob!</h1>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <form>
+            <div class="form-group form-group--wide">
+              <label for="formGroupExampleInput" class="sr-only">Berufsbezeichnung, Berufsgruppe, Fähigkeiten</label>
+              <input type="text" class="form-control form-control-lg" id="formGroupExampleInput" placeholder="Berufsbezeichnung, Berufsgruppe, Fähigkeiten">
+            </div>
+            <div class="form-group form-group--wide form-group--icon">
+              <label for="basic-addon2" class="sr-only">Ort, Region, Kanton</label>
+              <input type="text" class="form-control form-control-lg" placeholder="Ort, Region, Kanton" id="basic-addon2">
+              <!-- todo refine -->
+              <a href="#" class="fa-stack form-control--icon">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+              </a>
+            </div>
+            <div class="form-group form-group--slider">
+              <label for="ex1" class="sr-only">Radius</label>
+              <div class="slider slider-horizontal" id="ex1Slider"><div class="slider-track"><div class="slider-track-low" style="left: 0px; width: 0%;"></div><div class="slider-selection" style="left: 0%; width: 70%;"></div><div class="slider-track-high" style="right: 0px; width: 30%;"></div></div><div class="tooltip tooltip-main top" role="presentation" style="left: 70%; margin-left: -66px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">Current value: 14</div></div><div class="tooltip tooltip-min top" role="presentation" style="display: none;"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max top" role="presentation" style="display: none;"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="0" aria-valuemax="20" aria-valuenow="14" aria-valuetext="Current value: 14" tabindex="0" style="left: 70%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" aria-valuetext="Current value: 0" tabindex="0" style="left: 0%;"></div></div><input id="ex1" data-slider-id="ex1Slider" type="text" aria-describedby="infoKm" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" data-value="14" value="14" style="display: none;">
+              <span id="infoKm" class="slider-helptext text-muted">
+								+ 10 km
+							</span>
+            </div>
+            <a class="btn btn-primary btn-lg btn-block" href="job-room/job-result-list.html">Traumjob finden!</a>
+          </form>
+        </div>
+      </div>		</div>
+
+    <div id="candidates" style="display: none;">
+      <div class="row">
+        <div class="col-sm-8">
+
+          <ul class="nav nav-tabs nav--job-room" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#candidate-search" role="tab" aria-expanded="false">Kandidaten finden</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#job-publication" role="tab" aria-expanded="true">Job publizieren</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content--job-room">
+            <div class="tab-content">
+              <div class="tab-pane" id="candidate-search" role="tabpanel" aria-expanded="false">
+                <fieldset class="candidate-search">
+                  <div class="form-group">
+                    <label for="example-text-input" class="col-form-label">Ich suche eine/n</label>
+                    <div>
+                      <input class="form-control" type="text" id="example-text-input" placeholder="Berufsbezeichung">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cs-1" class="col-form-label">Kenntnisse, Fähigkeiten, Skills</label>
+                    <div>
+                      <input class="form-control" type="text" id="cs-1" placeholder="z.B. Tiefbau">
+                    </div>
+                  </div>
+
+                  <div class="form-group form-group--break">
+                    <label for="sort" class="col-form-label">Berufserfahrung</label>
+                    <div>
+                      <select class="form-control custom-select" id="sort">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cs-2" class="col-form-label">Arbeitsort</label>
+                    <div>
+                      <input class="form-control" type="text" id="cs-2" placeholder="Ort, Gemeinde, Kanton, PLZ">
+                    </div>
+                  </div>
+                  <div class="form-group form-group--break">
+                    <label for="cs-3" class="col-form-label">Wohnort</label>
+                    <div>
+                      <input class="form-control" type="text" id="cs-3" placeholder="Ort, Gemeinde, Kanton, PLZ">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cs-4" class="col-form-label">Verfügbarkeit</label>
+                    <div>
+                      <select class="form-control custom-select" id="cs-4">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cs-5" class="col-form-label">Arbeitspensum</label>
+                    <div>
+                      <select class="form-control custom-select" id="cs-5">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cs-6" class="col-form-label">Arbeitsform</label>
+                    <div>
+                      <select class="form-control custom-select" id="cs-6">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cs-7" class="col-form-label">Bildungsstufe</label>
+                    <div>
+                      <select class="form-control custom-select" id="cs-7">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cs-8" class="col-form-label">Abschluss</label>
+                    <div>
+                      <select class="form-control custom-select" id="cs-8">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group form-group--break">
+                    <label for="cs-9" class="col-form-label">Führerausweiskategorie</label>
+                    <div>
+                      <select class="form-control custom-select" id="cs-9">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cs-10" class="col-form-label">Sprachkenntnisse</label>
+                    <div>
+                      <select class="form-control custom-select" id="cs-10">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>						<a class="btn btn-primary btn-lg" href="#">Kandidaten anzeigen (1'644)</a>
+                </fieldset>
+
+                <div class="candidate-search__radar">
+                  <!--
+                                    <button type="button" class="close" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    -->
+
+                  Diesem Job-Profil enstprechen bereits<br>
+                  <span class="badge badge-radar">1'644</span><br>
+                  Stellensuchenden
+                  <a href="#">Jetzt anzeigen!</a>
+                </div>				</div>
+              <div class="tab-pane active" id="job-publication" role="tabpanel" aria-expanded="true">
+                <fieldset class="candidate-search">
+                  <legend>Stellenbeschreibung</legend>
+
+                  <div class="form-group">
+                    <label for="basic-addon2">Stellenbezeichnung</label>
+                    <div class="form-group--icon">
+                      <input type="text" class="form-control" placeholder="z.B. Maurer" id="basic-addon2">
+
+                      <a href="#" class="fa-stack form-control--icon">
+                        <i class="fa fa-search fa-stack-1x"></i>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cs-8" class="col-form-label">Abschluss</label>
+                    <div>
+                      <select class="form-control custom-select" id="cs-8">
+                        <option selected="">keine Auswahl</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <a class="btn btn-primary btn-lg" href="#">Job publizieren</a>
+                </fieldset>
+                <div class="candidate-search__radar">
+                  <!--
+                                    <button type="button" class="close" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    -->
+
+                  Diesem Job-Profil enstprechen bereits<br>
+                  <span class="badge badge-radar">1'644</span><br>
+                  Stellensuchenden
+                  <a href="#">Jetzt anzeigen!</a>
+                </div>				</div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>		</div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <h2 class="light">In Zusammenarbeit</h2>
+    <div class="footer--logos">
+      <div class="footer--logos__logo"><img class="cd-bund" src="/styleguide/images/seco-de-neg.png"></div>
+      <div class="footer--logos__logo"><img src="/styleguide/images/alv.png"></div>
+      <div class="footer--logos__logo"><img src="/styleguide/images/rav.png"></div>
+      <div class="footer--logos__logo"><img src="/styleguide/images/eures.png"></div>
+    </div>
+  </div>
+</footer>
+
+<div class="footer--seco">
+  <a href="#">Staatssekretariat für Wirtschaft SECO</a>
+  <a href="#">Rechtliche Grundlagen</a>
+</div>
 
 <router-outlet></router-outlet>
