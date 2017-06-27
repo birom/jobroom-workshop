@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@alv-ch/alv-styleguide/build/css/alv-ch.css';
+
+
+.header {
+  margin-bottom: 0;
+}

@@ -163,10 +163,18 @@ ng e2e
 ```
 
 ### Let's create some components!
+Layout components
  
 ```bash
 ng g c layout/footer --flat #-d
 ng g c layout/header --flat #-d
 ng g c layout/nav  #-d
-
 ```
+
+Create the home module
+```bash
+ng g m home #-d
+ng g c home -d
+```
+
+
