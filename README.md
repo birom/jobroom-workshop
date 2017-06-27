@@ -197,3 +197,9 @@ ng g c home/candidate-search-tool
 ng g c home/job-publication-tool
 ng g e home/tab
 ```
+
+Create the job-search module and job search component
+```bash
+ng g m job-search --routing
+ng g c job-search
+```

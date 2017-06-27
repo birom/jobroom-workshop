@@ -1,7 +1,7 @@
-<form>
+<div>
   <div class="form-group form-group--wide">
     <label for="formGroupExampleInput" class="sr-only">Berufsbezeichnung, Berufsgruppe, Fähigkeiten</label>
-    <input type="text" class="form-control form-control-lg" id="formGroupExampleInput"
+    <input type="text" class="form-control form-control-lg" id="formGroupExampleInput" (ngModel)="term"
            placeholder="Berufsbezeichnung, Berufsgruppe, Fähigkeiten">
   </div>
   <div class="form-group form-group--wide form-group--icon">
@@ -47,5 +47,5 @@
 								+ 10 km
 							</span>
   </div>
-  <a class="btn btn-primary btn-lg btn-block" href="job-room/job-result-list.html">Traumjob finden!</a>
-</form>
+  <a class="btn btn-primary btn-lg btn-block" (click)="search()">Traumjob finden!</a>
+</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-job-search-tool',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./job-search-tool.component.css']
 })
 export class JobSearchToolComponent implements OnInit {
+  term: string;
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
 
+  search() {
+    this.router.navigate(['/job-search'], { queryParams: { term: this.term }});
+  }
 }
