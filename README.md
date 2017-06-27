@@ -167,5 +167,6 @@ ng e2e
 ```bash
 ng g c layout/footer --flat #-d
 ng g c layout/header --flat #-d
+ng g c layout/nav  #-d
 
 ```
