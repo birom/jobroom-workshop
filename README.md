@@ -56,7 +56,7 @@ export class Cat implements ICat{
 
 let fluffy = new Cat()
 console.log(fluffy.name)      //compile-time error
-fluffy.speak()                // compile-time error
+fluffy.speak()                //compile-time error
 ```
 
 ### Angular conceptual overview
@@ -64,3 +64,101 @@ fluffy.speak()                // compile-time error
 ![Component hierarchy](doc/component-tree.png)
 * Angular is a component based framework
 * NgModule is a container for components, directive, pipe and services (services are shared between modules)
+
+### Angular cli introduction
+
+* Generates resources from blueprints
+* Build tool
+
+Install with npm: 
+```bash
+npm install –g @angular/cli
+ng -v
+```
+
+Example:
+```bash
+#Generate and run new app
+ng new jobroom-workshop --routing
+cd jobroom-workshop
+ng serve
+```
+
+#### Useful Flags
+Some of the flags can change the .angular-cli.json
+
+* --help
+* --dry-run / -d
+* --skip-install
+* --routing
+* --prefix
+* --style
+
+#### Linting
+Check and fix the code with ng lint
+
+* ng lint --help
+* ng lint
+* ng lint --fix
+
+#### Building
+Compile the app to an output directory (default is ./dist)
+
+Example:
+```bash
+ng build
+ls -l dist
+
+ng build --prod
+ls -l dist
+```
+
+Analyze the build directory with soruce-map-explorer
+
+```bash
+ng build
+npm install -g soruce-map-explorer
+source-map-explorer dist/main.bundle.js
+```
+
+Run build with different build  targets
+```bash
+ng build
+ng build --prod
+``` 
+
+Comparing **dev** and **prod** build target
+
+|                  | dev                            | prod                 |
+|------------------|--------------------------------|----------------------|
+|**AOT**           |no                              |yes                   |        
+|**Bundling**      |yes                             |yes                   |
+|**Cache-busting** |only images referenced in css   |all build files       |
+|**Environment**   |environment.ts                  |environment.prod.ts   |
+|**Extracted CSS** |global CSS output to .js        |yes, to css file(s)   |
+|**Uglification**  |no                              |yes                   |
+|**Source maps**   |yes                             |no                    |
+|**Tree-Shaking**  |no                              |yes                   |
+
+#### Ejecting webpack config
+If we need webpack custom configuration 
+
+```bash
+ng eject  
+```
+
+#### Testing
+With Angular CLI we can generate spec files
+
+Run unit tests:
+```bash
+ng test 
+```
+
+CLI also scaffold end to end resources
+
+Run protractor test:
+```bash
+ng e2e
+```
+
