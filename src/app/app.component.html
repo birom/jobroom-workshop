@@ -1,11 +1,5 @@
 <div class="header sticky-top">
-  <!-- ALV-HEADER -->
-  <div class="alv-header alv-header--inverse bg-inverse">
-		<span class="alv-header__brand mb-0">
-			<img src="/styleguide/images/swiss.svg" width="20" height="20" class="d-inline-block" alt="Swiss Confederation">
-			Arbeitslosenversicherung ALV
-		</span>
-  </div>
+  <app-header></app-header>
   <!-- navbar -->
   <nav class="navbar navbar-alv navbar-toggleable-md navbar-light bg-faded">
     <div class="container">
@@ -385,21 +379,6 @@
   </div>
 </div>
 
-<footer>
-  <div class="container">
-    <h2 class="light">In Zusammenarbeit</h2>
-    <div class="footer--logos">
-      <div class="footer--logos__logo"><img class="cd-bund" src="/styleguide/images/seco-de-neg.png"></div>
-      <div class="footer--logos__logo"><img src="/styleguide/images/alv.png"></div>
-      <div class="footer--logos__logo"><img src="/styleguide/images/rav.png"></div>
-      <div class="footer--logos__logo"><img src="/styleguide/images/eures.png"></div>
-    </div>
-  </div>
-</footer>
-
-<div class="footer--seco">
-  <a href="#">Staatssekretariat für Wirtschaft SECO</a>
-  <a href="#">Rechtliche Grundlagen</a>
-</div>
+<app-footer></app-footer>
 
 <router-outlet></router-outlet>
