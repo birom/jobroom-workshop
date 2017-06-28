@@ -1,3 +1,17 @@
-<p>
-  job-search works!
-</p>
+<app-job-search-toolbar></app-job-search-toolbar>
+
+<div class="container">
+
+  <div class="base">
+
+    <div class="base__subnavbar">
+        <app-job-search-filter></app-job-search-filter>
+    </div>
+
+    <div class="base__content--wide">
+        <app-job-search-list [jobs]="jobs"></app-job-search-list>
+    </div>
+
+  </div>
+
+</div>

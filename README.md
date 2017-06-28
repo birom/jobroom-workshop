@@ -203,3 +203,11 @@ Create the job-search module and job search component
 ng g m job-search --routing
 ng g c job-search
 ```
+
+Implement job-search
+```bash
+ng g i job-search/job
+ng g s job-search/job
+ng g c job-search/job-search-toolbar
+ng g c job-search/job-search-filter
+```
