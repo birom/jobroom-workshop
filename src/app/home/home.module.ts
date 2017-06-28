@@ -7,10 +7,12 @@ import {ToolbarTitleComponent} from './toolbar-title/toolbar-title.component';
 import {JobSearchToolComponent} from './job-search-tool/job-search-tool.component';
 import {CandidateSearchToolComponent} from './candidate-search-tool/candidate-search-tool.component';
 import { JobPublicationToolComponent } from './job-publication-tool/job-publication-tool.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [HomeComponent, ToolbarComponent, ToolbarItemComponent, ToolbarTitleComponent, JobSearchToolComponent, CandidateSearchToolComponent, JobPublicationToolComponent]
 })

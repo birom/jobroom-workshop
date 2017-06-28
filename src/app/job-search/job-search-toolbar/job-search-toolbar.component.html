@@ -1,10 +1,10 @@
 <div class="toolbar toolbar--light md-whiteframe-3dp">
   <div class="container">
     <div class="toolbar-collapse">
-      <form class="form-inline toolbar-form">
+      <div class="form-inline toolbar-form">
         <div class="form-group form-group--wide">
           <label for="formGroupExampleInput" class="sr-only">Berufsbezeichnung, Berufsgruppe, Fähigkeiten</label>
-          <input type="text" class="form-control form-control-lg" id="formGroupExampleInput"
+          <input type="text" class="form-control form-control-lg" id="formGroupExampleInput" [(ngModel)]="term"
                  placeholder="Berufsbezeichnung, Berufsgruppe, Fähigkeiten">
         </div>
         <div class="form-group form-group--wide form-group--icon">
@@ -48,8 +48,8 @@
 								+ 10 km
 							</span>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg">6 Jobs</button>
-      </form>
+        <button type="submit" class="btn btn-primary btn-lg" (click)="search()">Jobs</button>
+      </div>
     </div>
   </div>
 </div>

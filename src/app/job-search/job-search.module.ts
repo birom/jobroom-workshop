@@ -8,11 +8,15 @@ import { JobSearchFilterComponent } from './job-search-filter/job-search-filter.
 import { JobSearchListComponent } from './job-search-list/job-search-list.component';
 import { JobSearchListItemComponent } from './job-search-list-item/job-search-list-item.component';
 import {JobService} from './job.service';
+import {HttpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    JobSearchRoutingModule
+    JobSearchRoutingModule,
+    HttpModule,
+    FormsModule
   ],
   declarations: [JobSearchComponent, JobSearchToolbarComponent, JobSearchFilterComponent, JobSearchListComponent, JobSearchListItemComponent],
   providers: [JobService]

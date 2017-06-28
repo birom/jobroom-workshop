@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Job} from './job';
 import {ActivatedRoute} from '@angular/router';
 import {JobService} from './job.service';
+import 'rxjs/add/operator/map'
+import {JobSearchToolbarComponent} from './job-search-toolbar/job-search-toolbar.component';
 
 @Component({
   selector: 'app-job-search',
@@ -9,7 +11,9 @@ import {JobService} from './job.service';
   styleUrls: ['./job-search.component.css']
 })
 export class JobSearchComponent implements OnInit {
-  jobs: Array<Job>;
+  @ViewChild(JobSearchToolbarComponent) toolbar;
+
+  jobs: Array<Job> = [];
 
   constructor(private route: ActivatedRoute, private jobService: JobService) {
   }
@@ -18,6 +22,7 @@ export class JobSearchComponent implements OnInit {
     this.route.queryParams
       .map((params) => params['term'])
       .subscribe(term => {
+        this.toolbar.term = term;
         this.jobService.search(term)
           .subscribe(jobs => this.jobs = jobs);
       });
