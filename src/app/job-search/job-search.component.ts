@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {Job} from './job';
 import {ActivatedRoute} from '@angular/router';
 import {JobService} from './job.service';
-import 'rxjs/add/operator/map'
+import 'rxjs/Rx'
 import {JobSearchToolbarComponent} from './job-search-toolbar/job-search-toolbar.component';
 
 @Component({
@@ -21,10 +21,10 @@ export class JobSearchComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams
       .map((params) => params['term'])
-      .subscribe(term => {
-        this.toolbar.term = term;
-        this.jobService.search(term)
-          .subscribe(jobs => this.jobs = jobs);
+      .do(term => this.toolbar.term = term)
+      .flatMap(term => this.jobService.search(term))
+      .subscribe(jobs => {
+        this.jobs = jobs;
       });
   }
 
